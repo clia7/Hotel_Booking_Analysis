@@ -5,10 +5,18 @@ Using this clean, engineered data pipeline and a Random Forest classification mo
 
 📊 Project Overview & Results
 
-* **Local Validation Score:** 88.06% Accuracy / Classification Report (Baseline evaluation via `train_test_split` with `random_state=42` and `stratify=y`)
-* **Model Used:** Random Forest Classifier (`RandomForestClassifier` with `random_state=42`)
-* **Feature Set:** Optimized features including engineered variables for total stays, revenue proxies, guest counts, and one-hot encoded operational categories.
-* **Notebook Link:** View the full implementation on [Kaggle](https://www.kaggle.com/code/cliaa74/hotel-booking-demand)
+| Metric | Random Forest | XGBoost |
+| :--- | :--- | :--- |
+| **Accuracy** | **88.06%** | 86.02% |
+| **Precision (Class 1)** | **0.87** | 0.85 |
+| **Recall (Class 1)** | **0.80** | 0.76 |
+| **F1-Score (Class 1)** | **0.83** | 0.80 |
+
+*(Note: No hyperparameter tuning was performed in this iteration).*
+
+* **Model Used:** Random Forest Classifier (`RandomForestClassifier` with `random_state=42`) & XGBoost (`XGBClassifier` with `random_state = 42, n_estimators=200, learning_rate=0.1`) 
+* **Feature Set:** Optimized features including engineered variables for total stays, revenue, guest counts, and one-hot encoded operational categories.
+* **Notebook Link:** View the implementation on [Kaggle](https://www.kaggle.com/code/cliaa74/hotel-booking-demand)
 
 🛠️ Data Pipeline & Key Technical Learnings
 
@@ -30,7 +38,7 @@ Because tree-based ensemble models process tabular data strictly as mathematical
 
 🚀 Environment & Libraries
 
-* **Python 3**
+* **Python**
 * **Pandas & NumPy** (Data manipulation, matrix transformations, and feature isolation)
 * **Matplotlib & Seaborn** (Exploratory visualization and distribution tracking)
 * **Scikit-Learn** (Train-test splits, Random Forest classifier, and classification report metrics)
